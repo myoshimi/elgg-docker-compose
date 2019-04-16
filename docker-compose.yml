@@ -19,10 +19,11 @@ services:
       context: .
       dockerfile: ./php/Dockerfile
     restart: always
-    volumes:
-      - ${PWD}/Elgg:/var/www/html
     ports:
       - 80:80
+    volumes:
+      - ${PWD}/Elgg:/var/www/html
+      - ${PWD}/volumes/elgg:/elgg
   composer:
     image: composer:1.8.5
     restart: "no"
